@@ -5,8 +5,9 @@ import datetime
 import requests
 import logging
 
+
 print('Loading function')
-print("v2")
+print("version 3")
 s3 = boto3.client("s3", "us-east-1")
 open_search_url = "https://search-photos-b4z3pxsk23qaueyus6uwmqbhmq.us-east-1.es.amazonaws.com/photos/_doc"
 rekognition = boto3.client("rekognition", "us-east-1")
