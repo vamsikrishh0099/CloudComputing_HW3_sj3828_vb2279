@@ -6,6 +6,7 @@ import requests
 import logging
 
 
+
 print('Loading function')
 
 s3 = boto3.client("s3", "us-east-1")
