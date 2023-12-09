@@ -1,4 +1,16 @@
 version: 0.2
-artifacts:
-  files:
-    - './**/*'
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - echo "Installing dependencies..."
+  build:
+    commands:
+      - echo "Zipping deployment package..."
+      - zip -r9 deployment_package.zip .
+  post_build:
+    commands:
+      - echo "Updating lambda Function..."
+      - aws lambda update-function-code --function-name lf1cf1_test --zip-file fileb://deployment_package.zip
+      - echo "DONE!!"
